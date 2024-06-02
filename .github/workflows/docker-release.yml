@@ -63,7 +63,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/rsshub:latest
-          tags: latest
+          tags: |
+            type=raw,value=latest,enable=true
+            type=raw,value={{date 'YYYY-MM-DD'}},enable=true
           flavor: latest=false
 
 
