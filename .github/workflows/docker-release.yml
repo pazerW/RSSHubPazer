@@ -58,18 +58,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Get the date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
       - name: Extract Docker metadata (ordinary version)
         id: meta-ordinary
         uses: docker/metadata-action@v5
         with:
           images: ${{ secrets.DOCKER_USERNAME }}/rsshub:latest
-          tags: |
-            latest
-            ${{ steps.date.outputs.date }}
+          tags: latest
           flavor: latest=false
 
 
