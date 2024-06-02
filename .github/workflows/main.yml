@@ -63,7 +63,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ secrets.DOCKER_USERNAME }}/rsshub-pazer
+            ${{ secrets.DOCKER_USERNAME }}/rsshub
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable=true
