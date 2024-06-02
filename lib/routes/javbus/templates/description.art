@@ -17,9 +17,10 @@
 </tr>
 {{each magnets magnet}}
 <tr>
-<td><a href="{{ magnet.link }}">{{ magnet.title }}</a></td>
-<td>{{ magnet.size }}</td>
-<td>{{ magnet.date }}</td>
+<td>
+    <a href="neoaria2://addTask?autoAdd=true&url={{ magnet.link }}">{{ magnet.title }} {{ magnet.size }} {{ magnet.date }} - </a>
+        <a href="alfred://runtrigger/com.pazer.ariadownload/ariadown/?argument={{ magnet.link }}">【MAC】</a>
+</td>
 </tr>
 {{/each}}
 </table>

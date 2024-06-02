@@ -92,10 +92,10 @@ async function handler(ctx) {
                 const stars = content('.avatar-box span')
                     .toArray()
                     .map((s) => content(s).text());
-
+                const title = stars.length < 3 ? content('h3').text() : `【合集】` + content('h3').text();
                 const cacheIn = {
                     author: stars.join(', '),
-                    title: content('h3').text(),
+                    title,
                     category: [
                         ...content('.genre label')
                             .toArray()
