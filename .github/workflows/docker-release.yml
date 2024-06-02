@@ -3,7 +3,7 @@ name: 'Docker Release'
 on:
   push:
     branches:
-      - my_rss
+      - master
     paths:
       - '.github/workflows/docker-release.yml'
       - 'lib/**'
