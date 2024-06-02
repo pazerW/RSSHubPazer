@@ -63,8 +63,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ secrets.DOCKER_USERNAME }}/rsshub
-            ghcr.io/${{ github.repository }}
+            ${{ secrets.DOCKER_USERNAME }}/rsshub:latest
           tags: |
             type=raw,value=latest,enable=true
             type=raw,value={{date 'YYYY-MM-DD'}},enable=true
